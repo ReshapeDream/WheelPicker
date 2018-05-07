@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <declare-styleable name="WheelPicker">
+        <attr name="textSize" format="dimension"></attr>
+        <attr name="unSelectedTextColor" format="color"></attr>
+        <attr name="selectedTextColor" format="color"></attr>
+        <!--初始选中位置 -->
+        <attr name="initSelectPosition" format="integer"></attr>
+        <!--条目文本排列-->
+        <attr name="itemTextAlign" format="enum">
+            <enum name="center" value="0x0000"/>
+            <enum name="left" value="0x0001"/>
+            <enum name="right" value="0x0010"/>
+        </attr>
+        <!--是否支持多行显示-->
+        <attr name="multipleLine" format="boolean"/>
+        <!--当setData时，新数据是否滚动到上次的位置-->
+        <attr name="onDataChangeScrollToLastPosition" format="boolean"/>
+    </declare-styleable>
+    <dimen name="WheelTextSize">14sp</dimen>
+    <color name="WheelUnSelectTextColor">#232323</color>
+    <color name="WheelSelectTextColor">#000</color>
+</resources>
