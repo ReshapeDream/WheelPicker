@@ -1,7 +1,6 @@
 package com.neil.library.wheelpicker;
 
 import android.content.Context;
-import android.support.annotation.Nullable;
 import android.util.AttributeSet;
 import android.util.Log;
 import android.widget.LinearLayout;
@@ -25,11 +24,11 @@ public class LinkageWheel <M,T extends WheelEntity<M>> extends  LinearLayout{
         this(context,null);
     }
 
-    public LinkageWheel(Context context, @Nullable AttributeSet attrs) {
+    public LinkageWheel(Context context, AttributeSet attrs) {
         this(context, attrs,0);
     }
 
-    public LinkageWheel(Context context, @Nullable AttributeSet attrs, int defStyleAttr) {
+    public LinkageWheel(Context context,  AttributeSet attrs, int defStyleAttr) {
         super(context, attrs, defStyleAttr);
     }
 
