@@ -119,5 +119,6 @@
 
 #### 简单效果图
 这是一个朴素的自定义View,没有绚丽的动画效果。所以效果简陋！
+横屏效果如下图：
 <img src="https://raw.githubusercontent.com/ReshapeDream/WheelPicker/master/wheelDemo.png" width="480" height="300" alt="效果图"/>
 
