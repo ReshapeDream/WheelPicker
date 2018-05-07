@@ -101,14 +101,14 @@ public class LinkageWheel<M, T extends WheelEntity<M>> extends LinearLayout {
         return mSelectedData;
     }
 
-    private OnSelectedLastItemListener mOnSelectedLastItemListener;
+    private OnSelectedLastItemListener<T> mOnSelectedLastItemListener;
 
-    public void setOnSelectedLastItemListener(OnSelectedLastItemListener onSelectedLastItemListener) {
+    public void setOnSelectedLastItemListener(OnSelectedLastItemListener<T> onSelectedLastItemListener) {
         this.mOnSelectedLastItemListener = onSelectedLastItemListener;
     }
 
-    public interface OnSelectedLastItemListener {
-        void onSelected(IWheelPicker picker, WheelEntity selected, int position);
+    public interface OnSelectedLastItemListener<T> {
+        void onSelected(IWheelPicker picker, T selected, int position);
     }
 
     public ArrayList<T> getData() {

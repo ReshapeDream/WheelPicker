@@ -5,7 +5,12 @@ import java.util.ArrayList;
 public class WheelEntity<T> {
     private T data;
     private String showStr;//展示的文本
-    private ArrayList<WheelEntity<T>> subList=new ArrayList<>();
+    private ArrayList<WheelEntity<T>> subList=new ArrayList<>();//下级数据
+
+    public WheelEntity(T data, String showStr) {
+        this.data = data;
+        this.showStr = showStr;
+    }
 
     public T getData() {
         return data;
