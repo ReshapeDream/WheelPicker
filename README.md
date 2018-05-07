@@ -1,5 +1,6 @@
 # WheelPicker
 [![](https://jitpack.io/v/ReshapeDream/WheelPicker.svg)](https://jitpack.io/#ReshapeDream/WheelPicker)
+
 项目中涉及多级联动的选择，而且忽然文本很长，没办法了，自己再造一个轮子！
 
 可以自定义的属性
@@ -116,6 +117,7 @@
         });
 ```
 
-#### 比较丑的效果图
-这是一个朴素的自定义View,没有绚丽的动画效果。所以效果图比较丑！
+#### 简单效果图
+这是一个朴素的自定义View,没有绚丽的动画效果。所以效果简陋！
+<img src="https://raw.githubusercontent.com/ReshapeDream/WheelPicker/master/wheelDemo.png" width="480" height="300" alt="效果图"/>
 
