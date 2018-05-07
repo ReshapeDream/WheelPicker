@@ -14,10 +14,9 @@ import java.util.HashMap;
 public class LinkageWheel<M, T extends WheelEntity<M>> extends LinearLayout {
     private ArrayList<WheelPicker<M, T>> pickers = new ArrayList<>();
     private T mSelectedData;
-    private ArrayList<T> ts = new ArrayList<>();
     private ArrayList<T> mData;
 
-    private HashMap<Integer, T> tt = new HashMap<>();
+    private HashMap<Integer, T> allSelectedEntity = new HashMap<>();
     private boolean isInit = false;
 
     private static final String TAG = "LinkageWheel";
@@ -70,8 +69,10 @@ public class LinkageWheel<M, T extends WheelEntity<M>> extends LinearLayout {
             pickers.get(i).setOnItemSelectedListener(new OnItemSelectedListener<T>() {
                 @Override
                 public void onItemSelected(IWheelPicker picker, T data, int position) {
-//                    ts.add(index,data);
-                    tt.put(index, data);
+                    if(index==0){
+                        allSelectedEntity.clear();
+                    }
+                    allSelectedEntity.put(index, data);
                     if (index != pickers.size() - 1) {//不是最后一个
                         WheelPicker nextPicker = pickers.get(index + 1);
                         nextPicker.setData(data.getSubList());
@@ -93,10 +94,6 @@ public class LinkageWheel<M, T extends WheelEntity<M>> extends LinearLayout {
         isInit = true;
     }
 
-    public ArrayList<T> getSelectedWheelEntities() {
-        return ts;
-    }
-
     public WheelEntity getSelectedData() {
         return mSelectedData;
     }
@@ -115,8 +112,8 @@ public class LinkageWheel<M, T extends WheelEntity<M>> extends LinearLayout {
         return mData;
     }
 
-    public HashMap<Integer, T> getTt() {
-        return tt;
+    public HashMap<Integer, T> getAllSelectedEntity() {
+        return allSelectedEntity;
     }
 
     public void setData(ArrayList<T> mData) {
