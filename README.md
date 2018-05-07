@@ -100,7 +100,7 @@
         }
         linkageWheel.setData(usersLevel1);
 ```
-####获取选中的数据
+#### 获取选中的数据
 ```
         linkageWheel.setOnSelectedLastItemListener(new LinkageWheel.OnSelectedLastItemListener<WheelEntity<User>>() {
             @Override
@@ -116,6 +116,6 @@
         });
 ```
 
-####比较丑的效果图
+#### 比较丑的效果图
 这是一个朴素的自定义View,没有绚丽的动画效果。所以效果图比较丑！
 
