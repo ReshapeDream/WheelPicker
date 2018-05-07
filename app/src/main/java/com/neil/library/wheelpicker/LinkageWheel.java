@@ -4,31 +4,33 @@ import android.content.Context;
 import android.util.AttributeSet;
 import android.util.Log;
 import android.widget.LinearLayout;
+import android.support.annotation.Nullable;
 
 import com.neil.library.wheelpicker.listener.OnItemSelectedListener;
 
 import java.util.ArrayList;
 import java.util.HashMap;
 
-public class LinkageWheel <M,T extends WheelEntity<M>> extends  LinearLayout{
-    private ArrayList<WheelPicker<M,T>> pickers = new ArrayList<>();
+public class LinkageWheel<M, T extends WheelEntity<M>> extends LinearLayout {
+    private ArrayList<WheelPicker<M, T>> pickers = new ArrayList<>();
     private T mSelectedData;
-    private ArrayList<T> ts=new ArrayList<>();
+    private ArrayList<T> ts = new ArrayList<>();
     private ArrayList<T> mData;
 
-    private HashMap<Integer,T> tt=new HashMap<>();
-    private boolean isInit=false;
+    private HashMap<Integer, T> tt = new HashMap<>();
+    private boolean isInit = false;
 
-    private static final String TAG="LinkageWheel";
+    private static final String TAG = "LinkageWheel";
+
     public LinkageWheel(Context context) {
-        this(context,null);
+        this(context, null);
     }
 
-    public LinkageWheel(Context context, AttributeSet attrs) {
-        this(context, attrs,0);
+    public LinkageWheel(Context context, @Nullable AttributeSet attrs) {
+        this(context, attrs, 0);
     }
 
-    public LinkageWheel(Context context,  AttributeSet attrs, int defStyleAttr) {
+    public LinkageWheel(Context context, @Nullable AttributeSet attrs, int defStyleAttr) {
         super(context, attrs, defStyleAttr);
     }
 
@@ -37,13 +39,14 @@ public class LinkageWheel <M,T extends WheelEntity<M>> extends  LinearLayout{
         super.onFinishInflate();
         init();
     }
+
     public void setDefaultSelectedPosition(int position) {
-        Log.i(TAG,"setDefaultSelectedPosition"+"==================");
-        if(!isInit){
+        Log.i(TAG, "setDefaultSelectedPosition" + "==================");
+        if (!isInit) {
             init();
         }
         int childCount = pickers.size();
-        Log.i(TAG,childCount+"==================");
+        Log.i(TAG, childCount + "==================");
         for (int i = 0; i < childCount; i++) {
             pickers.get(i).setInitSelectItemPosition(position);
         }
@@ -51,7 +54,7 @@ public class LinkageWheel <M,T extends WheelEntity<M>> extends  LinearLayout{
 
     private void init() {
         int childCount = getChildCount();
-        if(isInit||childCount==0){
+        if (isInit || childCount == 0) {
             return;
         }
         for (int i = 0; i < childCount; i++) {
@@ -61,18 +64,18 @@ public class LinkageWheel <M,T extends WheelEntity<M>> extends  LinearLayout{
         }
         for (int i = 0; i < pickers.size(); i++) {
             final int index = i;
-            if(i==0&&pickers.get(0).getData()!=null&&pickers.get(0).getData().size()>0){
-                mSelectedData=(pickers.get(0).getData().get(0));
+            if (i == 0 && pickers.get(0).getData() != null && pickers.get(0).getData().size() > 0) {
+                mSelectedData = (pickers.get(0).getData().get(0));
             }
             pickers.get(i).setOnItemSelectedListener(new OnItemSelectedListener<T>() {
                 @Override
                 public void onItemSelected(IWheelPicker picker, T data, int position) {
 //                    ts.add(index,data);
-                    tt.put(index,data);
+                    tt.put(index, data);
                     if (index != pickers.size() - 1) {//不是最后一个
                         WheelPicker nextPicker = pickers.get(index + 1);
                         nextPicker.setData(data.getSubList());
-                        if(data.getSubList()==null||data.getSubList().size()==0){
+                        if (data.getSubList() == null || data.getSubList().size() == 0) {
                             for (int j = index + 2; j < pickers.size(); j++) {
                                 pickers.get(j).setData(new ArrayList());
                             }
@@ -87,7 +90,7 @@ public class LinkageWheel <M,T extends WheelEntity<M>> extends  LinearLayout{
                 }
             });
         }
-        isInit=true;
+        isInit = true;
     }
 
     public ArrayList<T> getSelectedWheelEntities() {
@@ -117,12 +120,12 @@ public class LinkageWheel <M,T extends WheelEntity<M>> extends  LinearLayout{
     }
 
     public void setData(ArrayList<T> mData) {
-        Log.i(TAG,"setData"+"==================");
+        Log.i(TAG, "setData" + "==================");
         this.mData = mData;
-        if(!isInit){
+        if (!isInit) {
             init();
         }
-        if(pickers.size()>0){
+        if (pickers.size() > 0) {
             pickers.get(0).setData(mData);
         }
     }
