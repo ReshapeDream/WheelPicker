@@ -67,6 +67,7 @@ public class LinkageWheel<M, T extends WheelEntity<M>> extends LinearLayout {
             pickers.get(i).setOnItemSelectedListener(new OnItemSelectedListener<T>() {
                 @Override
                 public void onItemSelected(IWheelPicker picker, T data, int position) {
+                    mSelectedData = data;
                     if(index==0){
                         allSelectedEntity.clear();
                     }
