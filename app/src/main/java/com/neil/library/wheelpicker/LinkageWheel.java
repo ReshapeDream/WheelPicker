@@ -79,6 +79,7 @@ public class LinkageWheel<M, T extends WheelEntity<M>> extends LinearLayout {
                             for (int j = index + 2; j < pickers.size(); j++) {
                                 pickers.get(j).setData(new ArrayList());
                             }
+                        }else{
                             //Listener
                             if (mOnSelectedLastItemListener != null)
                                 mOnSelectedLastItemListener.onSelected(picker, data, position);
