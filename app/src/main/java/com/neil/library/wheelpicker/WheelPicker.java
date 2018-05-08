@@ -80,13 +80,13 @@ public class WheelPicker<M, T extends WheelEntity<M>> extends View implements IW
     public WheelPicker(Context context, @Nullable AttributeSet attrs, int defStyleAttr) {
         super(context, attrs, defStyleAttr);
         TypedArray array = context.obtainStyledAttributes(attrs, R.styleable.NWheelPicker);
-        textSize = array.getDimension(R.styleable.WheelPicker_textSize, getResources().getDimension(R.dimen.WheelTextSize));
-        unSelectedTextColor = array.getColor(R.styleable.WheelPicker_unSelectedTextColor, getResources().getColor(R.color.WheelUnSelectTextColor));
-        selectedTextColor = array.getColor(R.styleable.WheelPicker_selectedTextColor, getResources().getColor(R.color.WheelSelectTextColor));
-        initSelectPosition = array.getInt(R.styleable.WheelPicker_initSelectPosition, -1);
-        itemTextAlign = array.getInt(R.styleable.WheelPicker_itemTextAlign, ALIGN_CENTER);
-        isMultipleLine = array.getBoolean(R.styleable.WheelPicker_multipleLine, false);
-        onDataChangeScrollToLastPosition = array.getBoolean(R.styleable.WheelPicker_onDataChangeScrollToLastPosition, false);
+        textSize = array.getDimension(R.styleable.NWheelPicker_textSize, getResources().getDimension(R.dimen.WheelTextSize));
+        unSelectedTextColor = array.getColor(R.styleable.NWheelPicker_unSelectedTextColor, getResources().getColor(R.color.WheelUnSelectTextColor));
+        selectedTextColor = array.getColor(R.styleable.NWheelPicker_selectedTextColor, getResources().getColor(R.color.WheelSelectTextColor));
+        initSelectPosition = array.getInt(R.styleable.NWheelPicker_initSelectPosition, -1);
+        itemTextAlign = array.getInt(R.styleable.NWheelPicker_itemTextAlign, ALIGN_CENTER);
+        isMultipleLine = array.getBoolean(R.styleable.NWheelPicker_multipleLine, false);
+        onDataChangeScrollToLastPosition = array.getBoolean(R.styleable.NWheelPicker_onDataChangeScrollToLastPosition, false);
         array.recycle();
 
         mPaint = new Paint(Paint.ANTI_ALIAS_FLAG | Paint.DITHER_FLAG | Paint.LINEAR_TEXT_FLAG);
