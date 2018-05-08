@@ -273,7 +273,6 @@ public class WheelPicker<M, T extends WheelEntity<M>> extends View implements IW
             case MotionEvent.ACTION_MOVE:
                 if (Math.abs(mDownPointY - event.getY()) < scaledTouchSlop) {
                     isClick = true;
-                    Log.i(TAG, "isClick MOVE================================================");
                     break;
                 }
                 isClick = false;
@@ -286,9 +285,6 @@ public class WheelPicker<M, T extends WheelEntity<M>> extends View implements IW
                 invalidate();
                 break;
             case MotionEvent.ACTION_UP:
-
-                Log.i(TAG, "isClick up================================================");
-
                 if (null != getParent())
                     getParent().requestDisallowInterceptTouchEvent(false);
                 if (isClick){//如果click 可能也产生了滑动，要滚回去
@@ -456,7 +452,6 @@ public class WheelPicker<M, T extends WheelEntity<M>> extends View implements IW
         } else {
             scrollToPosition(initSelectPosition);
         }
-        Log.i(TAG, "onDataChange  scrollToPosition ==================" + mPickerState);
     }
 
 

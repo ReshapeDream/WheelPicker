@@ -40,12 +40,10 @@ public class LinkageWheel<M, T extends WheelEntity<M>> extends LinearLayout {
     }
 
     public void setDefaultSelectedPosition(int position) {
-        Log.i(TAG, "setDefaultSelectedPosition" + "==================");
         if (!isInit) {
             init();
         }
         int childCount = pickers.size();
-        Log.i(TAG, childCount + "==================");
         for (int i = 0; i < childCount; i++) {
             pickers.get(i).setInitSelectItemPosition(position);
         }
@@ -117,7 +115,6 @@ public class LinkageWheel<M, T extends WheelEntity<M>> extends LinearLayout {
     }
 
     public void setData(ArrayList<T> mData) {
-        Log.i(TAG, "setData" + "==================");
         this.mData = mData;
         if (!isInit) {
             init();
