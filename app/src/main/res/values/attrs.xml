@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <declare-styleable name="WheelPicker">
+    <declare-styleable name="NWheelPicker">
         <attr name="textSize" format="dimension"></attr>
         <attr name="unSelectedTextColor" format="color"></attr>
         <attr name="selectedTextColor" format="color"></attr>

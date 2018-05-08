@@ -79,7 +79,7 @@ public class WheelPicker<M, T extends WheelEntity<M>> extends View implements IW
 
     public WheelPicker(Context context, @Nullable AttributeSet attrs, int defStyleAttr) {
         super(context, attrs, defStyleAttr);
-        TypedArray array = context.obtainStyledAttributes(attrs, R.styleable.WheelPicker);
+        TypedArray array = context.obtainStyledAttributes(attrs, R.styleable.NWheelPicker);
         textSize = array.getDimension(R.styleable.WheelPicker_textSize, getResources().getDimension(R.dimen.WheelTextSize));
         unSelectedTextColor = array.getColor(R.styleable.WheelPicker_unSelectedTextColor, getResources().getColor(R.color.WheelUnSelectTextColor));
         selectedTextColor = array.getColor(R.styleable.WheelPicker_selectedTextColor, getResources().getColor(R.color.WheelSelectTextColor));
