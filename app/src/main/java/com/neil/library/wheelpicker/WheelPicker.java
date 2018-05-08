@@ -369,7 +369,7 @@ public class WheelPicker<M, T extends WheelEntity<M>> extends View implements IW
         }
         dis += (itemHeights[position]) / 2;
         mScroller.startScroll(0, (int) mScrollOffsetY, 0, (int) (mWheelCenterY - dis - mScrollOffsetY), 16);
-        mHandler.postDelayed(this, 16);
+        mHandler.postDelayed(this, 16*3);
     }
 
     @Override
